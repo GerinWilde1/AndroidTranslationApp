@@ -1,0 +1,9 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.android.com/apk/res/android ">
+    <solid android:color="@android:color/transparent" /> <!-- Background color, if needed -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/black" />    <!-- Border color -->
+    <corners android:radius="10dp" /> <!-- Optional: Rounded corners -->
+</shape>

@@ -1,23 +1,21 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "com.example.translation_panther"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.translation_panther"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
@@ -30,43 +28,35 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
     }
 }
 
 dependencies {
 
-    
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    implementation ("com.google.mlkit:translate:17.0.3")
+    implementation(libs.androidx.core.ktx.v1120)
+    implementation(libs.androidx.appcompat.v161)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout.v214)
+    implementation(libs.androidx.library)
+    implementation(libs.androidx.ui.graphics.android)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    
+    androidTestImplementation(libs.androidx.junit.v115)
+    androidTestImplementation(libs.androidx.espresso.core.v351)
+    implementation(libs.play.services.mlkit.text.recognition.v1900)
+    implementation(libs.play.services.mlkit.text.recognition.chinese)
+    implementation(libs.play.services.mlkit.text.recognition.devanagari.v1600)
+    implementation(libs.play.services.mlkit.text.recognition.japanese.v1600)
+    implementation(libs.play.services.mlkit.text.recognition.korean.v1600)
+    implementation(libs.play.services.mlkit.language.id)
+    implementation(libs.translate.v1702)
 }
