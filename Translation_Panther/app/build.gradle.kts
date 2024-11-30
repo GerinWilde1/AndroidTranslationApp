@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.translation_panther"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.translation_panther"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -60,7 +60,15 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation ("com.google.mlkit:translate:17.0.3")
+    implementation (libs.translate)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.play.services.mlkit.text.recognition.common)
+    implementation(libs.language.id.common)
+    implementation(libs.play.services.mlkit.text.recognition.chinese)
+    implementation(libs.play.services.mlkit.text.recognition.devanagari)
+    implementation(libs.play.services.mlkit.text.recognition.japanese)
+    implementation(libs.play.services.mlkit.text.recognition.korean)
+    implementation(libs.play.services.mlkit.text.recognition)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
